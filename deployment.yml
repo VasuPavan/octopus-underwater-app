@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: underwater-app-jenkins 
+  name: ecr-app-underwater
   labels:
     app: octopus-underwater-app
 spec:
@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: octopus-underwater-app
-          image: 720766170633.dkr.ecr.us-east-2.amazonaws.com/octopus-underwater-app:latest
+          image: <Your AWS ECR URL>/underwater:latest
           ports:
             - containerPort: 80
               protocol: TCP
